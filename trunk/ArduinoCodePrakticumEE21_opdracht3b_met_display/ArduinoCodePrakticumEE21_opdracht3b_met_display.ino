@@ -10,10 +10,10 @@ void setup()
 void loop()
 {
   avg = avgValue(analogRead(LDR_PIN));
-  hysteresis = analogRead(HYST_PIN); 
+  setpoint = analogRead(SETPOINT_PIN); 
 
 
-  if (avg < (abs(treshhold - hysteresis)))
+  if (avg < (setpoint - HYST))
   {
     if ((millis() - lastMillis) >= 10000)  //indien het verschil meer dan 10000 is
     {
@@ -21,12 +21,12 @@ void loop()
       lastMillis = millis();              // update de waarde 
     } 
   }
-  else if (avg > (treshhold + hysteresis))
+  else if (avg > (setpoint + HYST))
   {
     digitalWrite(LED_PIN,LOW); 
     lastMillis = millis();
   }
-  //debugTimer(); 
+  debugTimer(); 
 }
 
 

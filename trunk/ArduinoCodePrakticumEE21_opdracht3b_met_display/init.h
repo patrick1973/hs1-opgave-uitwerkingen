@@ -24,13 +24,13 @@ const int LED_PIN = 12;
 const int Pin13 =13;
 const int buttonPin = A0;
 
-const int treshhold = 300;
+const int HYST = 100;
 const int LDR_PIN = A5;
-const int HYST_PIN = A4;
+const int SETPOINT_PIN = A4;
 
 //globals
 
 unsigned long lastMillis = 0; // is global om het getal te kunnen printen op het LCD om te debuggen
 int avg;                      // is global om het getal te kunnen printen op het LCD om te debuggen
-int hysteresis;               // is global om het getal te kunnen printen op het LCD om te debuggen
+int setpoint;               // is global om het getal te kunnen printen op het LCD om te debuggen
 #endif INIT_H
