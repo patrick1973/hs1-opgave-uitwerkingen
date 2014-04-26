@@ -12,7 +12,7 @@ void debugTimer()
   lcd.setCursor(0,1);
   lcd.print(avg);
   lcd.print("--");
-  lcd.print(hysteresis);
+  lcd.print(setpoint);
   counter=0;
   }
   counter++;
